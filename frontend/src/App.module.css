@@ -10,7 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(./images/bg-mobile-light.jpg);
+    background-image: var(--bg-image-mobile);
 }
 
 .todoWrapper {
@@ -20,7 +20,6 @@
 
 .background {
     background-color: var(--background);
-    /* min-height: 100vh; */
 }
 
 .background h2 {
@@ -30,5 +29,5 @@
     font-size: 14px;
     letter-spacing: -0.194px;
     font-weight: 400;
-    color: var(--input-placeholder-light-theme);
+    color: var(--input-placeholder);
 }

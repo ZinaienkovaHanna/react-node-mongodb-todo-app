@@ -8,12 +8,12 @@
     width: 327px;
     height: 48px;
     border-radius: 5px;
-    background: var(--logo-h1);
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background: var(--bg-todo);
+    box-shadow: var(--box-shadow);
 }
 
 .filterContainer h4 {
-    color: var(--input-placeholder-light-theme);
+    color: var(--input-placeholder);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.194px;

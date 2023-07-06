@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import styles from './TodoForm.module.css';
 
-function TodoForm({ addTodo }) {
+function TodoForm({ addTodo, isSun }) {
     const [text, setText] = useState('');
 
     const onSubmitHandler = (event) => {
@@ -12,7 +12,14 @@ function TodoForm({ addTodo }) {
     };
 
     return (
-        <form onSubmit={onSubmitHandler}>
+        <form
+            onSubmit={onSubmitHandler}
+            className={
+                isSun
+                    ? styles.formContainer
+                    : `${styles.formContainer} darkTheme`
+            }
+        >
             <span className={styles.circle}></span>
             <input
                 placeholder="Create a new todo..."

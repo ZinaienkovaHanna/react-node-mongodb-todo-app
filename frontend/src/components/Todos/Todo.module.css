@@ -6,9 +6,9 @@
     justify-content: space-between;
     width: 327px;
     height: 52px;
-    border-bottom: 1px solid var(--circle-light-theme);
-    background: var(--logo-h1);
-    color: var(--text-todo-light-theme);
+    border-bottom: 1px solid var(--circle);
+    background: var(--bg-todo);
+    color: var(--text-todo);
 }
 
 .firstTodo {
@@ -23,11 +23,15 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid var(--circle-light-theme);
+    border: 1px solid var(--circle);
+}
+
+.circle:hover {
+    cursor: pointer;
 }
 
 .todoContainer h3 {
-    color: var(--text-todo-light-theme);
+    color: var(--text-todo);
     font-family: Josefin Sans;
     font-size: 12px;
     font-weight: 400;
@@ -35,8 +39,20 @@
     padding-left: 52px;
 }
 
-.todoContainer img {
+.crossIcon {
     width: 12px;
     height: 12px;
     margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.crossIcon:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.completedTodo {
+    color: #d1d2da;
+    color: #4d5067;
+    text-decoration-line: strikethrough;
 }

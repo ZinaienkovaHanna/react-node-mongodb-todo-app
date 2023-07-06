@@ -2,17 +2,17 @@ import Todo from './Todo';
 
 import React from 'react';
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, isSun }) {
     return (
         <>
             {!todos.length && <h2>Todo list is empty</h2>}
             {todos.map((todo, index) => (
                 <Todo
-                    key={index}
+                    key={todo.id}
                     todo={todo}
-                    index={index}
                     deleteTodo={deleteTodo}
                     isFirstTodo={index === 0}
+                    isSun={isSun}
                 />
             ))}
         </>

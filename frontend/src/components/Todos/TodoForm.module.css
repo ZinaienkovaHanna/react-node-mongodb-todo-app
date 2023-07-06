@@ -1,4 +1,4 @@
-form {
+.formContainer {
     padding-top: 40px;
     padding-bottom: 16px;
     display: flex;
@@ -15,23 +15,23 @@ form {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid var(--circle-light-theme);
+    border: 1px solid var(--circle);
 }
 
-input {
+.formContainer input {
     border: none;
     width: 327px;
     height: 48px;
     padding-left: 52px;
     border-radius: 5px;
-    background: var(--logo-h1);
-    color: var(--text-todo-light-theme);
+    background: var(--bg-todo);
+    color: var(--text-todo);
     font-family: Josefin Sans;
     box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 
 input::placeholder {
-    color: var(--input-placeholder-light-theme);
+    color: var(--input-placeholder);
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.167px;

@@ -8,30 +8,35 @@
 
     /* ### Primary */
 
-    --logo-h1: #fff;
-    --background: #fafafa;
     --bright-blue: hsl(220, 98%, 61%);
     --check-circle: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 
     /* ### Light Theme */
-
-    --input-placeholder-light-theme: #9495a5;
-    --circle-light-theme: #e3e4f1;
-    --text-todo-light-theme: #393a4b;
-    --light-grayish-blue: hsl(233, 11%, 84%);
-    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+    --logo-h1: #fff;
+    --bg-todo: #fff;
+    --input-placeholder: #9495a5;
+    --circle: #e3e4f1;
+    --text-todo: #494c6b;
+    --background: #fafafa;
+    --bg-image-mobile: url(./images/bg-mobile-light.jpg);
+    --bg-image-desktop: url(./images/bg-desktop-light.jpg);
+    --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 
     /* ### Dark Theme */
 
-    --input-placeholder-dark-theme: #767992;
     --circle-dark-theme: #393a4b;
     --text-todo-dark-theme: #c8cbe7;
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue-dark-theme: hsl(234, 39%, 85%);
-    --light-grayish-blue-hover: hsl(236, 33%, 92%);
-    --very-dark-grayish-blue-dark-theme: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue-dark-theme-second: hsl(237, 14%, 26%);
+}
+
+.darkTheme {
+    --bg-todo: #25273d;
+    --input-placeholder: #767992;
+    --circle: #393a4b;
+    --text-todo: #c8cbe7;
+    --bg-image-mobile: url(./images/bg-mobile-dark.jpg);
+    --bg-image-desktop: url(./images/bg-desktop-dark.jpg);
+    --background: #171823;
+    --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -39,11 +44,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* #root {
-    width: 100%;
-    overflow: hidden;
-} */
 
 body {
     font-family: 'Josefin Sans', sans-serif;

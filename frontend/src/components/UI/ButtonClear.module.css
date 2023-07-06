@@ -8,13 +8,13 @@
     width: 327px;
     height: 50px;
     border-radius: 0 0 5px 5px;
-    background: var(--logo-h1);
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    background: var(--bg-todo);
+    box-shadow: var(--box-shadow);
 }
 
 .buttonContainer h5,
 .buttonContainer button {
-    color: var(--input-placeholder-light-theme);
+    color: var(--input-placeholder);
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.167px;
@@ -27,6 +27,6 @@
 
 .buttonContainer button {
     border: none;
-    background: var(--logo-h1);
+    background: var(--bg-todo);
     padding-right: 20px;
 }
