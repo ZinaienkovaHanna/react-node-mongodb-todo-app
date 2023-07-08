@@ -1,4 +1,4 @@
-import styles from './Filter.module.css';
+import styles from './ButtonFilter.module.css';
 
 function Filter({ isSun }) {
     return (

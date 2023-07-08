@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import Header from './components/UI/Header';
-import TodoForm from './components/Todos/TodoForm';
-import TodoList from './components/Todos/TodoList';
-import ButtonClear from './components/UI/ButtonClear';
-import Filter from './components/UI/Filter';
+import Header from './components/Header/Header';
+import TodoForm from './components/TodoForm/TodoForm';
+import TodoList from './components/TodoList/TodoList';
+import ButtonClear from './components/ButtonClear/ButtonClear';
+import ButtonFilter from './components/ButtonFilter/ButtonFilter';
 
 import styles from './App.module.css';
 
@@ -66,7 +66,7 @@ function App() {
                 ) : (
                     ''
                 )}
-                {todos.length ? <Filter isSun={isSun} /> : ''}
+                {todos.length ? <ButtonFilter isSun={isSun} /> : ''}
                 {todos.length ? <h2>Drag and drop to reorder list</h2> : ''}
             </div>
         </section>
