@@ -9,7 +9,8 @@
     /* ### Primary */
 
     --bright-blue: hsl(220, 98%, 61%);
-    --check-circle: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    --check-circle-color-1: #55ddff;
+    --check-circle-color-2: #c058f3;
 
     /* ### Light Theme */
     --logo-h1: #fff;
@@ -21,6 +22,7 @@
     --bg-image-mobile: url(./images/bg-mobile-light.jpg);
     --bg-image-desktop: url(./images/bg-desktop-light.jpg);
     --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    --completed-todo: #d1d2da;
 
     /* ### Dark Theme */
 
@@ -37,6 +39,7 @@
     --bg-image-desktop: url(./images/bg-desktop-dark.jpg);
     --background: #171823;
     --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    --completed-todo: #4d5067;
 }
 
 * {

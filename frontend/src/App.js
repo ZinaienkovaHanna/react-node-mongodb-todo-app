@@ -26,6 +26,16 @@ function App() {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
 
+    const toggleTodoHandler = (id) => {
+        setTodos(
+            todos.map((todo) =>
+                todo.id === id
+                    ? { ...todo, isCompleted: !todo.isCompleted }
+                    : { ...todo }
+            )
+        );
+    };
+
     return (
         <section className={styles.todoContainer}>
             <div
@@ -47,6 +57,7 @@ function App() {
                     <TodoList
                         todos={todos}
                         deleteTodo={deleteTodoHandler}
+                        toggleTodo={toggleTodoHandler}
                         isSun={isSun}
                     />
                 </div>

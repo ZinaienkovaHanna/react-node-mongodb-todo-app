@@ -2,7 +2,7 @@ import Todo from './Todo';
 
 import React from 'react';
 
-function TodoList({ todos, deleteTodo, isSun }) {
+function TodoList({ todos, deleteTodo, isSun, toggleTodo }) {
     return (
         <>
             {!todos.length && <h2>Todo list is empty</h2>}
@@ -11,6 +11,7 @@ function TodoList({ todos, deleteTodo, isSun }) {
                     key={todo.id}
                     todo={todo}
                     deleteTodo={deleteTodo}
+                    toggleTodo={toggleTodo}
                     isFirstTodo={index === 0}
                     isSun={isSun}
                 />

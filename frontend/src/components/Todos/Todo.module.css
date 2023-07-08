@@ -28,6 +28,19 @@
 
 .circle:hover {
     cursor: pointer;
+    border: 1px solid var(--check-circle-color-1);
+}
+
+.completedTodo .circle {
+    background: linear-gradient(
+        var(--check-circle-color-1),
+        var(--check-circle-color-2)
+    );
+}
+
+.checkIconIcon {
+    padding-left: 5px;
+    width: 15px;
 }
 
 .todoContainer h3 {
@@ -51,8 +64,7 @@
     transform: scale(1.3);
 }
 
-.completedTodo {
-    color: #d1d2da;
-    color: #4d5067;
-    text-decoration-line: strikethrough;
+.completedTodo h3 {
+    color: var(--completed-todo);
+    text-decoration: line-through;
 }
