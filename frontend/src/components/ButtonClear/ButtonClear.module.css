@@ -25,8 +25,13 @@
     padding-left: 20px;
 }
 
-.buttonContainer button {
+.buttonClear {
     border: none;
     background: var(--bg-todo);
     padding-right: 20px;
+}
+
+.buttonClear:hover {
+    cursor: pointer;
+    color: var(--text-todo);
 }

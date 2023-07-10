@@ -12,17 +12,25 @@
     box-shadow: var(--box-shadow);
 }
 
-.filterContainer h4 {
+.filterContainer button {
+    border: none;
+    background: var(--bg-todo);
     color: var(--input-placeholder);
+    font-family: Josefin Sans;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.194px;
 }
 
-.filterContainer h4:nth-of-type(1) {
+.filterContainer button:hover {
+    cursor: pointer;
+    color: var(--button-hover);
+}
+
+.filterContainer button:nth-of-type(1) {
     padding-left: 81px;
 }
 
-.filterContainer h4:nth-of-type(3) {
+.filterContainer button:nth-of-type(3) {
     padding-right: 80px;
 }

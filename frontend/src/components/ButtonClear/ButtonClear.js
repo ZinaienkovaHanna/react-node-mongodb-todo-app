@@ -1,6 +1,8 @@
 import styles from './ButtonClear.module.css';
 
-function ButtonClear({ isSun, todos }) {
+function ButtonClear({ isSun, todos, deleteCompletedTodos }) {
+    const inCompleteTodos = todos.filter((todo) => !todo.isCompleted);
+
     return (
         <div
             className={
@@ -9,8 +11,13 @@ function ButtonClear({ isSun, todos }) {
                     : `${styles.buttonContainer} darkTheme`
             }
         >
-            <h5>{todos.length} items left</h5>
-            <button>Clear Completed</button>
+            <h5>{inCompleteTodos.length} items left</h5>
+            <button
+                className={styles.buttonClear}
+                onClick={deleteCompletedTodos}
+            >
+                Clear Completed
+            </button>
         </div>
     );
 }

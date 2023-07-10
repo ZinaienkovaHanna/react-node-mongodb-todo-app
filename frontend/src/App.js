@@ -5,13 +5,14 @@ import Header from './components/Header/Header';
 import TodoForm from './components/TodoForm/TodoForm';
 import TodoList from './components/TodoList/TodoList';
 import ButtonClear from './components/ButtonClear/ButtonClear';
-import ButtonFilter from './components/ButtonFilter/ButtonFilter';
+import ButtonsFilter from './components/ButtonsFilter/ButtonsFilter';
 
 import styles from './App.module.css';
 
 function App() {
     const [todos, setTodos] = useState([]);
     const [isSun, setIsSun] = useState(true);
+    const [filter, setFilter] = useState('All');
 
     const addTodoHandler = (text) => {
         const newTodo = {
@@ -36,6 +37,25 @@ function App() {
         );
     };
 
+    const deleteCompletedTodoHandler = () => {
+        setTodos(todos.filter((todo) => !todo.isCompleted));
+    };
+
+    const filterTodoHandler = (filter) => {
+        setFilter(filter);
+    };
+
+    const filteredTodos = todos.filter((todo) => {
+        if (filter === 'All') {
+            return true;
+        } else if (filter === 'Active') {
+            return !todo.isCompleted;
+        } else if (filter === 'Completed') {
+            return todo.isCompleted;
+        }
+        return false;
+    });
+
     return (
         <section className={styles.todoContainer}>
             <div
@@ -55,19 +75,28 @@ function App() {
             >
                 <div className={styles.todoWrapper}>
                     <TodoList
-                        todos={todos}
+                        todos={filteredTodos}
+                        filter={filter}
                         deleteTodo={deleteTodoHandler}
                         toggleTodo={toggleTodoHandler}
                         isSun={isSun}
                     />
                 </div>
-                {todos.length ? (
-                    <ButtonClear isSun={isSun} todos={todos} />
-                ) : (
-                    ''
+
+                {!!todos.length && (
+                    <ButtonClear
+                        isSun={isSun}
+                        todos={todos}
+                        deleteCompletedTodos={deleteCompletedTodoHandler}
+                    />
                 )}
-                {todos.length ? <ButtonFilter isSun={isSun} /> : ''}
-                {todos.length ? <h2>Drag and drop to reorder list</h2> : ''}
+                {!!todos.length && (
+                    <ButtonsFilter
+                        isSun={isSun}
+                        filterTodo={filterTodoHandler}
+                    />
+                )}
+                {!!todos.length && <h2>Drag and drop to reorder list</h2>}
             </div>
         </section>
     );
