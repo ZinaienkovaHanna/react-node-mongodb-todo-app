@@ -57,10 +57,10 @@
     height: 12px;
     margin-right: 20px;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .crossIcon:hover {
-    cursor: pointer;
     transform: scale(1.3);
 }
 
@@ -90,9 +90,14 @@
     }
 
     .crossIcon {
+        display: none;
         width: 18px;
         height: 18px;
         margin-right: 24px;
+    }
+
+    .todoContainer:hover .crossIcon {
+        display: inline-block;
     }
 
     .checkIconIcon {
