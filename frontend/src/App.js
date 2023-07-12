@@ -73,16 +73,14 @@ function App() {
                     isSun ? styles.background : `${styles.background} darkTheme`
                 }
             >
-                <div className={styles.todoWrapper}>
-                    <TodoList
-                        todos={filteredTodos}
-                        setTodos={setTodos}
-                        filter={filter}
-                        deleteTodo={deleteTodoHandler}
-                        toggleTodo={toggleTodoHandler}
-                        isSun={isSun}
-                    />
-                </div>
+                <TodoList
+                    todos={filteredTodos}
+                    setTodos={setTodos}
+                    filter={filter}
+                    deleteTodo={deleteTodoHandler}
+                    toggleTodo={toggleTodoHandler}
+                    isSun={isSun}
+                />
 
                 {!!todos.length && (
                     <ButtonContainer

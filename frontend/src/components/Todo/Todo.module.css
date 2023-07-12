@@ -3,6 +3,7 @@
     width: 327px;
     min-height: 52px;
     position: relative;
+    top: -26px;
     display: flex;
     align-items: center;
     justify-content: space-between;

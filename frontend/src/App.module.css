@@ -1,34 +1,31 @@
 .todoContainer {
     margin: 0 auto;
-    width: 375px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .imageBackground {
-    width: 375px;
+    width: 100%;
     height: 198px;
+    flex: 0 0 198px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-image: var(--bg-image-mobile);
 }
 
-.todoWrapper {
-    position: relative;
-    top: -26px;
-}
-
 .background {
+    width: 100%;
+    height: 100%;
     background-color: var(--background);
 }
 
 @media (min-width: 1440px) {
-    .todoContainer {
-        width: 1440px;
-    }
-
     .imageBackground {
-        width: 1440px;
         height: 300px;
+        flex: 0 0 300px;
         background-image: var(--bg-image-desktop);
     }
 }
