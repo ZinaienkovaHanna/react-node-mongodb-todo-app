@@ -23,6 +23,7 @@ function Todo({ todo, deleteTodo, isFirstTodo, isSun, toggleTodo }) {
             </span>
 
             <h3>{todo.text}</h3>
+
             <img
                 src={crossIcon}
                 alt="Cross Icon"

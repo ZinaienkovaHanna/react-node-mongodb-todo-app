@@ -90,6 +90,10 @@
         padding-left: 72px;
     }
 
+    .completedTodo h3 {
+        color: var(--completed-todo);
+    }
+
     .crossIcon {
         display: none;
         width: 18px;
