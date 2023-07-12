@@ -1,12 +1,11 @@
 .todoContainer {
     margin: 0 auto;
-    max-width: 375px;
-    border: 2px solid green;
+    width: 375px;
 }
 
 .imageBackground {
-    max-width: 375px;
-    min-height: 198px;
+    width: 375px;
+    height: 198px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,12 +21,14 @@
     background-color: var(--background);
 }
 
-.background h2 {
-    padding-top: 40px;
-    padding-bottom: 72px;
-    text-align: center;
-    font-size: 14px;
-    letter-spacing: -0.194px;
-    font-weight: 400;
-    color: var(--input-placeholder);
+@media (min-width: 1440px) {
+    .todoContainer {
+        width: 1440px;
+    }
+
+    .imageBackground {
+        width: 1440px;
+        height: 300px;
+        background-image: var(--bg-image-desktop);
+    }
 }

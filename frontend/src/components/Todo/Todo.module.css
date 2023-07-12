@@ -1,11 +1,11 @@
 .todoContainer {
     margin: 0 auto;
+    width: 327px;
+    min-height: 52px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 327px;
-    height: 52px;
     border-bottom: 1px solid var(--circle);
     background: var(--bg-todo);
     color: var(--text-todo);
@@ -16,18 +16,18 @@
 }
 
 .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     position: absolute;
     top: 26px;
     left: 22px;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
     border: 1px solid var(--circle);
+    cursor: pointer;
 }
 
 .circle:hover {
-    cursor: pointer;
     border: 1px solid var(--check-circle-color-1);
 }
 
@@ -67,4 +67,37 @@
 .completedTodo h3 {
     color: var(--completed-todo);
     text-decoration: line-through;
+}
+
+@media (min-width: 1440px) {
+    .todoContainer {
+        width: 540px;
+        min-height: 64px;
+    }
+
+    .circle {
+        top: 32px;
+        left: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .todoContainer h3 {
+        color: var(--text-todo);
+        font-size: 18px;
+        letter-spacing: -0.25px;
+        padding-left: 72px;
+    }
+
+    .crossIcon {
+        width: 18px;
+        height: 18px;
+        margin-right: 24px;
+    }
+
+    .checkIconIcon {
+        padding-left: 6px;
+        padding-top: 6px;
+        width: 18px;
+    }
 }

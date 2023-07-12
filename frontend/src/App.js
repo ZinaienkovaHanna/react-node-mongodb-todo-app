@@ -4,8 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header/Header';
 import TodoForm from './components/TodoForm/TodoForm';
 import TodoList from './components/TodoList/TodoList';
-import ButtonClear from './components/ButtonClear/ButtonClear';
-import ButtonsFilter from './components/ButtonsFilter/ButtonsFilter';
+import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 
 import styles from './App.module.css';
 
@@ -68,6 +67,7 @@ function App() {
                 <Header isSun={isSun} setIsSun={setIsSun} />
                 <TodoForm addTodo={addTodoHandler} isSun={isSun} />
             </div>
+
             <div
                 className={
                     isSun ? styles.background : `${styles.background} darkTheme`
@@ -84,19 +84,13 @@ function App() {
                 </div>
 
                 {!!todos.length && (
-                    <ButtonClear
+                    <ButtonContainer
                         isSun={isSun}
                         todos={todos}
                         deleteCompletedTodos={deleteCompletedTodoHandler}
-                    />
-                )}
-                {!!todos.length && (
-                    <ButtonsFilter
-                        isSun={isSun}
                         filterTodo={filterTodoHandler}
                     />
                 )}
-                {!!todos.length && <h2>Drag and drop to reorder list</h2>}
             </div>
         </section>
     );

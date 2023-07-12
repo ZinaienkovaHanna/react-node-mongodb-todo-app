@@ -1,0 +1,76 @@
+.buttonContainer {
+    margin: 0 auto;
+    width: 327px;
+    position: relative;
+    top: -26px;
+}
+
+.flexContainer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-todo);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 16px;
+}
+
+.buttonContainer h5,
+.buttonClear {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.167px;
+    color: var(--input-placeholder);
+}
+
+.buttonContainer h5 {
+    padding-left: 20px;
+    padding-top: 19px;
+    border-radius: 0 0 0 5px;
+}
+
+.buttonClear {
+    padding-right: 20px;
+    border: none;
+    border-radius: 0 0 5px 0;
+    background: var(--bg-todo);
+}
+
+.buttonClear:hover {
+    cursor: pointer;
+    color: var(--text-todo);
+}
+
+.buttonContainer h2 {
+    padding-top: 40px;
+    padding-bottom: 72px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: -0.194px;
+    font-weight: 400;
+    color: var(--input-placeholder);
+}
+
+@media (min-width: 1440px) {
+    .buttonContainer {
+        width: 540px;
+    }
+
+    .buttonContainer h5,
+    .buttonClear {
+        font-size: 14px;
+        letter-spacing: -0.194px;
+    }
+
+    .buttonContainer h5 {
+        padding-left: 24px;
+    }
+
+    .buttonClear {
+        padding-right: 24px;
+    }
+
+    .buttonContainer h2 {
+        padding-top: 49px;
+        padding-bottom: 52px;
+    }
+}

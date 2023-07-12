@@ -1,20 +1,21 @@
 .formContainer {
+    margin: 0 auto;
+    width: 327px;
     padding-top: 40px;
     padding-bottom: 16px;
     display: flex;
     justify-content: center;
     position: relative;
-    border: 2px solid yellow;
 }
 
 .circle {
-    position: absolute;
-    top: 64px;
-    left: 44px;
-    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    position: absolute;
+    top: 64px;
+    left: 20px;
+    transform: translateY(-50%);
     border: 1px solid var(--circle);
 }
 
@@ -24,9 +25,11 @@
     height: 48px;
     padding-left: 52px;
     border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.167px;
     background: var(--bg-todo);
     color: var(--text-todo);
-    font-family: Josefin Sans;
     box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 
@@ -35,9 +38,38 @@ input::placeholder {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.167px;
-    font-family: Josefin Sans;
 }
 
 input:focus {
     outline: none;
+}
+
+@media (min-width: 1440px) {
+    .formContainer {
+        width: 540px;
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .formContainer input {
+        width: 540px;
+        height: 64px;
+        padding-left: 72px;
+        font-size: 18px;
+        letter-spacing: -0.25px;
+    }
+
+    .circle {
+        top: 80px;
+        left: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    input::placeholder {
+        font-size: 18px;
+        letter-spacing: -0.25px;
+        line-height: 48px;
+        height: 48px;
+    }
 }

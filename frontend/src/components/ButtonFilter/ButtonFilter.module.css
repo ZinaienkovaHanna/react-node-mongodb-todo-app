@@ -1,29 +1,25 @@
 .filterContainer {
     margin: 0 auto;
-    margin-top: -10px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 327px;
     height: 48px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
     background: var(--bg-todo);
     box-shadow: var(--box-shadow);
 }
 
 .filterContainer button {
     border: none;
-    background: var(--bg-todo);
-    color: var(--input-placeholder);
-    font-family: Josefin Sans;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.194px;
+    color: var(--input-placeholder);
+    background: var(--bg-todo);
+    cursor: pointer;
 }
 
 .filterContainer button:hover {
-    cursor: pointer;
     color: var(--button-hover);
 }
 
@@ -33,4 +29,21 @@
 
 .filterContainer button:nth-of-type(3) {
     padding-right: 80px;
+}
+
+@media (min-width: 1440px) {
+    .filterContainer {
+        width: 167px;
+        height: 50px;
+        border-radius: 0px;
+        margin-top: -66px;
+    }
+
+    .filterContainer button:nth-of-type(1) {
+        padding-left: 0px;
+    }
+
+    .filterContainer button:nth-of-type(3) {
+        padding-right: 0px;
+    }
 }

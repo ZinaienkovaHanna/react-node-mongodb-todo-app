@@ -1,6 +1,6 @@
-import styles from './ButtonsFilter.module.css';
+import styles from './ButtonFilter.module.css';
 
-function ButtonsFilter({ isSun, filterTodo }) {
+function ButtonFilter({ isSun, filterTodo }) {
     return (
         <div
             className={
@@ -16,4 +16,4 @@ function ButtonsFilter({ isSun, filterTodo }) {
     );
 }
 
-export default ButtonsFilter;
+export default ButtonFilter;
