@@ -76,6 +76,7 @@ function App() {
                 <div className={styles.todoWrapper}>
                     <TodoList
                         todos={filteredTodos}
+                        setTodos={setTodos}
                         filter={filter}
                         deleteTodo={deleteTodoHandler}
                         toggleTodo={toggleTodoHandler}
