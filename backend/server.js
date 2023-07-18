@@ -1,17 +1,21 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Todo from './models/todo.js';
 import todoRoutes from './routes/todo-routes.js';
+import { config } from 'dotenv';
+
+config();
 
 const PORT = 5000;
-const URL = 'mongodb://0.0.0.0:27017/todo-app';
+const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.2uhcfpa.mongodb.net/todo-app?retryWrites=true&w=majority`;
+
+console.log(URL);
 
 const app = express();
 app.use(express.json());
 app.use(todoRoutes);
 
 mongoose
-    .connect(URL)
+    .connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');
     })
