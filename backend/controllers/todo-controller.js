@@ -1,4 +1,4 @@
-import Todo from '../models/todo.js';
+import Todo from '../models/todoModel.js';
 
 const handleError = (res, error) => {
     res.status(500).json({ error });
@@ -28,6 +28,14 @@ const deleteTodo = (req, res) => {
         .catch((err) => handleError(res, err));
 };
 
+const deleteCompletedTodos = (req, res) => {
+    Todo.deleteMany({ isCompleted: true })
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((err) => handleError(res, err));
+};
+
 const addTodo = (req, res) => {
     const todo = new Todo(req.body);
 
@@ -46,4 +54,11 @@ const updateTodo = (req, res) => {
         .catch((err) => handleError(res, err));
 };
 
-export { getTodos, getTodo, deleteTodo, addTodo, updateTodo };
+export {
+    getTodos,
+    getTodo,
+    deleteTodo,
+    deleteCompletedTodos,
+    addTodo,
+    updateTodo,
+};

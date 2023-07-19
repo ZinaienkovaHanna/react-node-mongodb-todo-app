@@ -39,8 +39,8 @@ function TodoList({ todos, setTodos, deleteTodo, isSun, toggleTodo, filter }) {
                         ) : (
                             todos.map((todo, index) => (
                                 <Draggable
-                                    key={todo.id}
-                                    draggableId={todo.id.toString()}
+                                    key={todo._id}
+                                    draggableId={todo._id.toString()}
                                     index={index}
                                 >
                                     {(provided) => (

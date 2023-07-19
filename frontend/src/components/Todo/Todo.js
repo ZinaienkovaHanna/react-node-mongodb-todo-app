@@ -12,7 +12,10 @@ function Todo({ todo, deleteTodo, isFirstTodo, isSun, toggleTodo }) {
 
     return (
         <div className={todoClassName}>
-            <span className={styles.circle} onClick={() => toggleTodo(todo.id)}>
+            <span
+                className={styles.circle}
+                onClick={() => toggleTodo(todo._id)}
+            >
                 {todo.isCompleted && (
                     <img
                         src={checkIcon}
@@ -28,7 +31,7 @@ function Todo({ todo, deleteTodo, isFirstTodo, isSun, toggleTodo }) {
                 src={crossIcon}
                 alt="Cross Icon"
                 className={styles.crossIcon}
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTodo(todo._id)}
             ></img>
         </div>
     );

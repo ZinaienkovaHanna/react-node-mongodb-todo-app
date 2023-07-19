@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Header from './components/Header/Header';
 import TodoForm from './components/TodoForm/TodoForm';
@@ -13,31 +13,73 @@ function App() {
     const [isSun, setIsSun] = useState(true);
     const [filter, setFilter] = useState('All');
 
-    const addTodoHandler = (text) => {
-        const newTodo = {
-            text: text,
-            isCompleted: false,
-            id: uuidv4(),
+    const baseURL = 'http://127.0.0.1:5000';
+
+    const addTodoHandler = async (text) => {
+        try {
+            const newTodo = {
+                text: text,
+                isCompleted: false,
+            };
+
+            const response = await axios.post(`${baseURL}/todos`, newTodo);
+            const savedTodo = response.data;
+            setTodos([...todos, savedTodo]);
+        } catch (err) {
+            console.log('Error adding todo', err);
+        }
+    };
+
+    useEffect(() => {
+        const fetchTodos = async () => {
+            try {
+                const response = await axios.get(`${baseURL}/todos`);
+                const fetchedTodos = response.data;
+                setTodos(fetchedTodos);
+            } catch (err) {
+                console.log('Error getting todo', err);
+            }
         };
-        setTodos([...todos, newTodo]);
+
+        fetchTodos();
+    }, []);
+
+    const deleteTodoHandler = async (_id) => {
+        try {
+            await axios.delete(`${baseURL}/todos/${_id}`);
+            setTodos(todos.filter((todo) => todo._id !== _id));
+        } catch (err) {
+            console.log('Error deleting todo', err);
+        }
     };
 
-    const deleteTodoHandler = (id) => {
-        setTodos(todos.filter((todo) => todo.id !== id));
+    const toggleTodoHandler = async (_id) => {
+        try {
+            const updatedTodo = todos.find((todo) => todo._id === _id);
+            const updatedTodoData = {
+                ...updatedTodo,
+                isCompleted: !updatedTodo.isCompleted,
+            };
+            await axios.patch(`${baseURL}/todos/${_id}`, updatedTodoData);
+            setTodos(
+                todos.map((todo) =>
+                    todo._id === _id
+                        ? { ...todo, isCompleted: !todo.isCompleted }
+                        : { ...todo }
+                )
+            );
+        } catch (err) {
+            console.log('Error updating todo', err);
+        }
     };
 
-    const toggleTodoHandler = (id) => {
-        setTodos(
-            todos.map((todo) =>
-                todo.id === id
-                    ? { ...todo, isCompleted: !todo.isCompleted }
-                    : { ...todo }
-            )
-        );
-    };
-
-    const deleteCompletedTodoHandler = () => {
-        setTodos(todos.filter((todo) => !todo.isCompleted));
+    const deleteCompletedTodoHandler = async () => {
+        try {
+            await axios.post(`${baseURL}/todos/completed`);
+            setTodos(todos.filter((todo) => !todo.isCompleted));
+        } catch (err) {
+            console.log('Error deleting completed todos', err);
+        }
     };
 
     const filterTodoHandler = (filter) => {
