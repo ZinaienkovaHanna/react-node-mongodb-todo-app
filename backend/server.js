@@ -6,7 +6,7 @@ import cors from 'cors';
 
 config();
 
-const PORT = process.env.PORT;
+const PORT = 5000;
 const URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.2uhcfpa.mongodb.net/${process.env.MONGO_DBNAME}?retryWrites=true&w=majority`;
 
 const app = express();
