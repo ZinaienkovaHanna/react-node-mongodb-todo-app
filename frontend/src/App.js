@@ -34,7 +34,7 @@ function App() {
     };
 
     const deleteTodoHandler = async (_id) => {
-        const todos = await deleteTodo(_id);
+        await deleteTodo(_id);
         setTodos(todos.filter((todo) => todo._id !== _id));
     };
 
