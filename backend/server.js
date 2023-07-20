@@ -6,8 +6,8 @@ import cors from 'cors';
 
 config();
 
-const PORT = 5000;
-const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.2uhcfpa.mongodb.net/todo-app?retryWrites=true&w=majority`;
+const PORT = process.env.PORT;
+const URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.2uhcfpa.mongodb.net/${process.env.MONGO_DBNAME}?retryWrites=true&w=majority`;
 
 const app = express();
 app.use(cors());
